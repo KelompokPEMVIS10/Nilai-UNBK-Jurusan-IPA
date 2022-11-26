@@ -1,14 +1,16 @@
-import requests
+import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 
-req = requests.get("https://github.com/muhammadhafizal16/Kelompok10-NilaiUNBK").json()
-
 # Grafik Rerata Nilai UNBK Tingkat SMA Jurusan IPA Se-Indonesia Tahun Ajaran 2018/2019
 
-data_keys = list(req.keys())
-data_values = list(req.values())
-xdata = np.array(data_keys)
-ydata = np.array(data_values)
-plt.plot(subjects, y, color='red',marker='o', label='My Marks')
+subjects = ['Matematika', 'Fisika', 'Biologi', 'Kimia', 'Bahasa Inggris', 'Bahasa Indonesia', 'Rerata Nilai Nasional']
+y = [38.68, 45.88, 50.03, 50.42, 52.49, 68.07, 52.43]
+x = [70, 60, 50, 40, 30, 20, 20, 10]
+
+plt.plot(subjects, y, color='Red', marker='o', label='My Marks')
+plt.title("Grafik Rerata Nilai UNBK Tingkat SMA Jurusan IPA Se-Indonesia Tahun Ajaran 2018/2019")
+plt.xlabel("Mata Pelajaran")
+plt.ylabel("Rata-rata")
+plt.grid()
 plt.show()
